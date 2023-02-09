@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ recipe_object.title }} -
+            Kamron's Recipes
+{% endblock title %}
+
+{% block content %}
+<header>
+    <nav>
+        <a class="hover-white" href="{% url 'recipes' %}">Main</a>
+    </nav>
+
+</header>
+<main>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Create</button>
+      </form>
+</main>
+{% endblock content %}

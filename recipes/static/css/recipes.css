@@ -1,0 +1,100 @@
+head{
+    border: 20px, rgb(4, 0, 0);
+}
+
+
+h2{
+    font-size: medium;
+    margin: 15px
+}
+h3{
+    font-size: medium;
+    margin: 15px
+}
+html {
+    background-color: rgb(244, 171, 171);
+    color: rgb(123, 2, 123);
+}
+
+img {
+    height: 200px
+}
+
+div {
+    color: darkgoldenrod
+}
+
+a {
+    display: inline-block;
+    margin: 5px;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+.hover-white:hover {
+
+
+    color: white;
+
+}
+
+.hotpink-background {
+    vertical-align: middle;
+    text-align: center;
+    background-color: hotpink;
+    block-size: 50px;
+    padding-top: 25px;
+    width: 100%;
+}
+
+header{
+    background-color: tomato;
+    margin-top: 0;
+    width: 100%;
+    margin-left: -150;
+    margin-right: -150
+}
+
+
+nav {
+    display: inline-block;
+    padding: 16px;
+    background-color: tomato;
+    block-size: 30px;
+    color:rgb(107, 7, 107);
+    font-weight: bold;
+ }
+
+
+
+ .grid-size:not(h1 h2){
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    column-gap: 16px;
+    grid-template-rows: 2fr;
+    row-gap: 16px;
+
+ }
+ .box-shadow{
+
+  box-shadow: -1px 2px 4px 2px rgb(123, 63, 123);
+
+
+}
+.box-hover:hover{
+    box-shadow: -1px 2px 4px 2px white;
+    transform: translateY(-5px)
+}
+tr:nth-child(odd) :not(th){
+    background-color: rgb(216, 129, 216);
+}
+
+main {
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    margin-right: 50px;
+}
+.inline {
+    display: inline-block;
+}

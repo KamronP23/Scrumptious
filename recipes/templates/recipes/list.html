@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title%}
+Kamron's Recipes
+{% endblock title %}
+{% block content%}
+<header style="position: relative; top: -20px;">
+    <div class="inline">
+        <nav>
+            <a class="hover-white" href="{% url 'recipes' %}">Main</a>
+
+            {% if user.is_authenticated %}
+            Hello, {{ user.username|title }}
+            <a class="hover-white" href="{% url 'create_recipe' %}">Create a recipe</a>
+            <a class="hover-white" href="{% url 'my_recipe_list' %}">My Recipes</a>
+
+
+            <a class="hover-white" href="{% url 'user_logout' %}">Logout</a>
+            {% else %}
+            <a class="hover-white" href="{% url 'signup' %}">Signup</a>
+            <a class="hover-white" href="{% url 'user_login' %}">Login</a>
+            <a class="hover-white" href="{% url 'user_logout' %}">Logout</a>
+
+            {% endif %}
+
+        </nav>
+     </div>
+</header>
+<main>
+    <h1> Tasty Recipes</h1>
+    <h2> Yummy!!!!</h2>
+    <div class="grid-size">
+        {% for recipe in recipe_list %}
+            <div class ="box-shadow box-hover">
+                <h3>
+                    <a class="hover-white" href="{% url 'show_recipe' recipe.id %}">{{ recipe.title }}</a>
+                </h3>
+                <p>
+                    &nbsp; {{ recipe.created_on|date:"F j Y" }}
+
+                </p>
+                <a href="{% url 'show_recipe' recipe.id %}"><img src="{{ recipe.picture|default:"https://via.placeholder.com/150" }}"></a>
+                <div>
+                     &nbsp; {{ recipe.rating }}
+                     stars
+                </div>
+                <p></p>
+            </div>
+        {% endfor %}
+            </div>
+    </div>
+
+
+
+
+</main>
+{%endblock content%}
